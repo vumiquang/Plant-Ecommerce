@@ -37,13 +37,12 @@
 html,
 body {
     overflow-x: hidden;
-    height: 100%;
+    overflow-y: auto;
     width: 100%;
 }
 html {
     scroll-behavior: smooth;
     font-size: 10px;
-    overflow-x: hidden;
 }
 body {
     font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
@@ -211,5 +210,20 @@ ul {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+.header.sticky-header {
+    width: 100%;
+    position: fixed;
+    animation-name: fadeInDown;
+    animation-fill-mode: forwards;
+    animation-duration: 0.3s;
+}
+@keyframes fadeInDown {
+    0% {
+        top: -50px;
+    }
+    100% {
+        top: 0;
     }
 }

@@ -3,6 +3,8 @@ import './footer.scss';
 import logo from '../../assets/images/logo.png';
 import { Link } from 'react-router-dom';
 const Footer = () => {
+  
+    
     return (
         <footer>
             <div className="container">

@@ -1,8 +1,6 @@
 import React from 'react';
-import imgBanner from '../assets/images/about-banner.png';
 import imgSuMenh from '../assets/images/about-su-menh.png';
 import imgTamNhin from '../assets/images/about-tam-nhin.png';
-import imgTestimonial from '../assets/images/about-testimonial.png';
 import imgPartner1 from '../assets/images/partner-1.png';
 import imgPartner2 from '../assets/images/partner-2.png';
 import imgPartner3 from '../assets/images/partner-3.png';
@@ -10,12 +8,14 @@ import imgPartner4 from '../assets/images/partner-4.png';
 import imgPartner5 from '../assets/images/partner-5.png';
 
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper';
+import { Navigation, Autoplay } from 'swiper';
 import 'swiper/css'; // core Swiper
 import 'swiper/css/navigation';
 import 'swiper/css/pagination'; // Pagination module
 
 const About = () => {
+   
+
     return (
         <div className="about">
             <div className="about-banner"></div>

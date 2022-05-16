@@ -8,20 +8,19 @@ import Product from '../pages/Product';
 import ProductDetail from '../pages/ProductDetail';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-
 const Router = () => {
     return (
-        <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="cart" element={<Cart />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="product" element={<Product />} />
-            <Route path="product/:productID" element={<ProductDetail />} />
-            <Route path="about" element={<About />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="*" element={<Error />} />
-        </Routes>
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="cart" element={<Cart />} />
+                <Route path="contact" element={<Contact />} />
+                <Route path="product" element={<Product />} />
+                <Route path="product/:productID" element={<ProductDetail />} />
+                <Route path="about" element={<About />} />
+                <Route path="login" element={<Login />} />
+                <Route path="register" element={<Register />} />
+                <Route path="*" element={<Error />} />
+            </Routes>
     );
 };
 

@@ -5,9 +5,10 @@ import './header.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import userSlice from '../../store/User/userSlice';
 import { signout } from '../../firebase/auth';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const Header = () => {
+    const location = useLocation();
     const headRef = useRef(null);
     const [menuMobile, setMenuMobile] = useState(false);
     const [menuCollapse, setMenuCollapse] = useState(false);
@@ -16,7 +17,23 @@ const Header = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    useEffect(() => {
+        window.addEventListener('scroll', scroll);
+        return () => {
+            window.removeEventListener('scroll', scroll);
+        };
+    }, []);
+    useEffect(() => {
+        setMenuMobile(false);
+    }, [location]);
 
+    function scroll(e) {
+        if (window.pageYOffset > 50) {
+            headRef.current.classList.add('sticky-header');
+        } else {
+            headRef.current.classList.remove('sticky-header');
+        }
+    }
 
     return (
         <header className="header" ref={headRef}>

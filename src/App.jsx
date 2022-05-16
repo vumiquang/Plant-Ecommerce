@@ -8,6 +8,7 @@ import { getAllProduct } from './store/Product/productSlice';
 import userSlice from './store/User/userSlice';
 import NotifyWrap from './components/NotifyWrap';
 import cartSlice, { getAllCart } from './store/Cart/cartSlice';
+import ScrollToTop from './components/ScrollToTop';
 const App = () => {
     const user = useSelector((state) => state.user);
     // const products = useSelector((state) => state.products);
@@ -25,13 +26,15 @@ const App = () => {
     }, [user]);
     return (
         <>
-            <NotifyWrap dispatch={dispatch} />
-            <Header />
-            <main>
-                <Router></Router>
-            </main>
-            <NewsLetter />
-            <Footer />
+            <ScrollToTop>
+                <NotifyWrap dispatch={dispatch} />
+                <Header />
+                <main>
+                    <Router></Router>
+                </main>
+                <NewsLetter />
+                <Footer />
+            </ScrollToTop>
         </>
     );
 };
