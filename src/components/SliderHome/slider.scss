@@ -42,6 +42,9 @@
             animation-delay: 0.2s;
             animation-duration: 0.5s;
             animation-fill-mode: forwards;
+            @media screen and (max-width: 500px) {
+                font-size: 40px;
+            }
         }
         .slide-text-normal {
             opacity: 0;
@@ -52,6 +55,9 @@
             animation-delay: 0.4s;
             animation-duration: 0.5s;
             animation-fill-mode: forwards;
+            @media screen and (max-width: 500px) {
+                font-size: 30px;
+            }
         }
     }
     .swiper-slide-active .slide-text-normal,
