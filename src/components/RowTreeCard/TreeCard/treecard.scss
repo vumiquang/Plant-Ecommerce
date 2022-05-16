@@ -1,0 +1,86 @@
+.tree-card {
+    > div {
+        width: 100%;
+        padding-bottom: 120%;
+        position: relative;
+        .wrap-card {
+            position: absolute;
+            padding: 10px;
+            padding-bottom: 70px;
+            background: #fff;
+            inset: 0;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            &:hover {
+                z-index: 99999;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+                .tree-card__action {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    &__img {
+        height: 80%;
+        min-height: 80%;
+        width: 100%;
+        overflow: hidden;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+    }
+    &__name {
+        display: block;
+        text-align: center;
+        font-size: clamp(18px, 2vw, 20px);
+        color: var(--color-gray);
+        margin-bottom: 5px;
+        &:hover {
+            color: var(--color-green);
+        }
+    }
+    &__price {
+        text-align: center;
+        .price {
+            font-size: clamp(14px, 1vw, 20px);
+            text-decoration: line-through;
+            margin-right: 5px;
+        }
+        .sale {
+            font-size: clamp(14px, 1.5vw, 20px);
+            color: var(--color-green);
+        }
+    }
+    &__action {
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        border-radius: 999rem;
+        justify-content: center;
+        transition: all 0.3s;
+        opacity: 0;
+        a {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-size: var(--font-size-3);
+            margin: 3px 10px;
+            &:hover {
+                color: var(--color-green);
+            }
+            i {
+                vertical-align: bottom;
+            }
+        }
+    }
+}

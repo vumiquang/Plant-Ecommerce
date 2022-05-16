@@ -1,0 +1,10 @@
+section {
+    padding: 50px 0;
+    .title {
+        font-size: clamp(30px, 5vw, 40px);
+        text-align: center;
+        color: var(--color-gray);
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+}

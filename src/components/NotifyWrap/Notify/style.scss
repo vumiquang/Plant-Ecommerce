@@ -1,0 +1,52 @@
+.notification-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    background: rgb(251, 255, 252);
+    border-radius: 2px;
+    padding: 20px 10px;
+    padding-right: 40px;
+    margin-bottom: 10px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.3);
+    animation: SlideLeft 0.4s;
+    @keyframes SlideLeft {
+        0% {
+            left: -100px;
+        }
+
+        100% {
+            left: 0;
+        }
+    }
+    .icon {
+        font-size: 30px;
+        color: var(--color-green);
+    }
+    .icon-warn {
+        display: none;
+        color: rgb(255, 70, 70);
+    }
+    .content {
+        margin-left: 15px;
+        text-align: center;
+        font-size: var(--font-size-2);
+        color: var(--color-gray);
+    }
+    .exit {
+        font-size: 20px;
+        color: var(--color-gray);
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        cursor: pointer;
+    }
+    &.warn {
+        .icon-success {
+            display: none;
+        }
+        .icon-warn {
+            display: inline-block;
+        }
+    }
+}

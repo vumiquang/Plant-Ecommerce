@@ -1,0 +1,60 @@
+.news-letter {
+    background-image: url('../../assets/images/bai-viet-noi-bat.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding: 90px 0;
+    h2 {
+        text-align: center;
+        font-size: var(--font-size-4);
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    form {
+        width: 500px;
+        margin: 0 auto;
+        position: relative;
+        input {
+            padding: 30px 10px;
+            padding-right: 60px;
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+            font-size: var(--font-size-2);
+            outline: none;
+            border: none;
+            border-radius: 999rem;
+
+            &::placeholder {
+                font-family: 'Roboto Condensed';
+                text-align: left;
+                color: rgb(133, 133, 133);
+            }
+        }
+        button {
+            position: absolute;
+            top: 13px;
+            right: 20px;
+            height: 35px;
+            width: 35px;
+            cursor: pointer;
+            background-color: transparent;
+            border: 0;
+            outline: 0;
+            background-image: url('../../assets/images/icon/plane.svg');
+            background-size: contain;
+            background-position: center center;
+            background-repeat: no-repeat;
+        }
+    }
+}
+@media only screen and (max-width: 600px) {
+    .news-letter {
+        h2 {
+            font-size: 30px;
+        }
+        form {
+            width: 300px;
+        }
+    }
+}

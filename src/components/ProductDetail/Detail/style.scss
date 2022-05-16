@@ -1,0 +1,84 @@
+.product-detail-info {
+    width: 50%;
+    padding-left: 20px;
+    color: var(--color-gray);
+    @media only screen and(max-width:800px) {
+        width: 100%;
+        margin-top: 20px;
+    }
+    h2 {
+        font-size: var(--font-size-4);
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .rate {
+        margin-bottom: 10px;
+    }
+    .price {
+        span {
+            font-weight: 300;
+            font-size: var(--font-size-2);
+            text-decoration: line-through;
+            margin-bottom: 20px;
+            margin-right: 10px;
+        }
+
+        .sale {
+            text-decoration: none !important;
+            font-size: var(--font-size-3);
+            color: var(--color-green);
+        }
+    }
+    p {
+        font-weight: 300;
+        font-size: var(--font-size-2);
+        line-height: 21px;
+        margin-bottom: 20px;
+    }
+    .size-select {
+        font-weight: 400;
+        font-size: var(--font-size-2);
+        margin-bottom: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        label {
+            display: inline-block;
+            min-width: 70px;
+        }
+        select {
+            padding: 15px 20px;
+            background: #fff;
+            border: 1px solid #bdbdbd;
+            outline: none;
+            font-size: var(--font-size-2);
+            color: var(--color-gray);
+            margin-right: 20px;
+            width: 130px;
+            margin-bottom: 10px;
+        }
+    }
+    .count {
+        font-weight: 400;
+        font-size: var(--font-size-2);
+        margin-bottom: 20px;
+        label {
+            min-width: 70px;
+            display: inline-block;
+        }
+        input {
+            width: 130px;
+            font-size: var(--font-size-2);
+            color: var(--color-gray);
+            padding: 15px 20px;
+            background: #fff;
+            border: 1px solid #bdbdbd;
+            outline: none;
+            font-size: var(--font-size-2);
+            color: var(--color-gray);
+        }
+    }
+    .btn {
+        min-width: 100px;
+    }
+}

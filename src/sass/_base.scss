@@ -1,0 +1,213 @@
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../assets/font/RobotoCondensed-Regular.ttf');
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../assets/font/RobotoCondensed-Bold.ttf');
+    font-weight: 700;
+}
+@font-face {
+    font-family: 'Roboto Condensed';
+    src: url('../assets/font/RobotoCondensed-Light.ttf');
+    font-weight: 300;
+}
+:root {
+    --color-gray: #333333;
+    --color-green: #80b435;
+
+    --font-size-0: 10px;
+    --font-size-1: 14px;
+    --font-size-2: 18px;
+    --font-size-3: 24px;
+    --font-size-4: 36px;
+    --font-size-5: clamp(35px, 4vw, 45px);
+}
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    overflow-x: hidden;
+    height: 100%;
+}
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+body {
+    font-family: 'Roboto Condensed', 'Open Sans', sans-serif;
+}
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: #f5f5f5;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    background-color: #616161;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    // z-index: 999;
+}
+ul {
+    list-style-type: none;
+}
+.container {
+    width: 100%;
+    max-width: 1620px;
+    padding: 0 50px;
+    margin: auto;
+
+    @include tablet {
+        padding: 0 20px;
+    }
+
+    @include mobile {
+        padding: 0 10px;
+    }
+}
+.row {
+    display: flex;
+    gap: 10px 0;
+    flex-wrap: nowrap;
+}
+.row.no-gap {
+    gap: 0;
+}
+.row.wrap {
+    flex-wrap: wrap;
+}
+.row.reverse {
+    flex-direction: row-reverse;
+}
+.row.center {
+    justify-content: center;
+}
+.hidden {
+    display: none !important;
+}
+@for $i from 1 through 12 {
+    .col-#{$i} {
+        width: calc(100% / 12 * #{$i});
+    }
+}
+
+@include tablet {
+    @for $i from 1 through 12 {
+        .col-md-#{$i} {
+            width: calc(100% / 12 * #{$i});
+        }
+    }
+    .mobile-hidden {
+        display: none !important;
+    }
+}
+
+@include mobile {
+    @for $i from 1 through 12 {
+        .col-sm-#{$i} {
+            width: calc(100% / 12 * #{$i});
+        }
+    }
+}
+
+.btn {
+    min-width: 100px;
+    font-size: var(--font-size-3);
+    background-color: var(--color-green);
+    padding: 17px 37px;
+    border-radius: 999rem;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.9;
+    }
+    @media only screen and (max-width: 1024px) {
+        font-size: var(--font-size-2);
+        padding: 10px 20px;
+    }
+    @media only screen and (max-width: 600px) {
+        font-size: var(--font-size-1);
+        padding: 6px 12px;
+    }
+}
+.btn.btn-small {
+    font-size: var(--font-size-2);
+    padding: 10px 20px;
+    @media only screen and (max-width: 767px) {
+        font-size: var(--font-size-1);
+        padding: 6px 12px;
+    }
+}
+.arrow-right {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-left: 5px solid #fff;
+}
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    border-right: 5px solid #fff;
+}
+.arrow-down {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--color-gray);
+}
+.arrow-up {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid var(--color-gray);
+}
+.bg-red {
+    background: rgb(218, 0, 0);
+}
+.bg-green {
+    background: rgb(20, 238, 0);
+}
+.bg-yellow {
+    background: rgb(240, 255, 23);
+}
+.bg-purple {
+    background: rgb(204, 0, 177);
+}
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
