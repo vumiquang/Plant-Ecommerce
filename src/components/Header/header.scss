@@ -54,6 +54,12 @@
                 }
             }
         }
+        > li > a.active {
+            color: var(--color-green);
+            &::after {
+                width: 100%;
+            }
+        }
     }
     .mobile-avatar {
         display: flex;
@@ -283,6 +289,10 @@
                             color: var(--color-green);
                             padding-left: 10px;
                         }
+                    }
+                    li a.active {
+                        color: var(--color-green);
+                        padding-left: 10px;
                     }
                 }
                 .mobile__sub__menu a {

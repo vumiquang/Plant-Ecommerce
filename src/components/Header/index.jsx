@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import logo from '../../assets/images/logo.png';
 import './header.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import userSlice from '../../store/User/userSlice';
 import { signout } from '../../firebase/auth';
 import { useNavigate, useLocation } from 'react-router-dom';
+import CustomLink from './CustomLink';
 
 const Header = () => {
     const location = useLocation();
@@ -25,6 +25,7 @@ const Header = () => {
     }, []);
     useEffect(() => {
         setMenuMobile(false);
+        setMenuCollapse(false);
     }, [location]);
 
     function scroll(e) {
@@ -59,10 +60,10 @@ const Header = () => {
                         </div>
                         <ul className="row">
                             <li>
-                                <Link to="/">
+                                <CustomLink to="/">
                                     <i className="bx bx-home-circle"></i>Trang
                                     chủ
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li className="collapse-menu">
                                 <span
@@ -73,10 +74,10 @@ const Header = () => {
                                         setMenuCollapse(!menuCollapse);
                                     }}
                                 ></span>
-                                <Link to="/product">
+                                <CustomLink to="/product">
                                     <i className="bx bx-leaf"></i>
                                     Sản phẩm
-                                </Link>
+                                </CustomLink>
                                 <div
                                     className={`${
                                         menuCollapse ? 'show' : ''
@@ -102,15 +103,15 @@ const Header = () => {
                                 </div>
                             </li>
                             <li>
-                                <Link to="/about">
+                                <CustomLink to="/about">
                                     <i className="bx bx-info-circle"></i>Về
                                     chúng tôi
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li>
-                                <Link to="/contact">
+                                <CustomLink to="/contact">
                                     <i className="bx bx-mail-send"></i>Liên hệ
-                                </Link>
+                                </CustomLink>
                             </li>
                             <li>
                                 {user.isLogin && (
@@ -126,7 +127,7 @@ const Header = () => {
                                     </a>
                                 )}
                                 {user.isLogin || (
-                                    <Link
+                                    <CustomLink
                                         to="/login"
                                         onClick={() => {
                                             setMenuMobile(false);
@@ -134,7 +135,7 @@ const Header = () => {
                                     >
                                         <i className="bx bx-log-in"></i> Đăng
                                         nhập
-                                    </Link>
+                                    </CustomLink>
                                 )}
                             </li>
                         </ul>
@@ -161,10 +162,10 @@ const Header = () => {
                         ></i>
                         <ul className="header__menu row">
                             <li>
-                                <Link to="/">Trang chủ</Link>
+                                <CustomLink to="/">Trang chủ</CustomLink>
                             </li>
                             <li>
-                                <Link to="/product">Sản phẩm</Link>
+                                <CustomLink to="/product">Sản phẩm</CustomLink>
                                 <ul className="header__sub__menu">
                                     <li>
                                         <Link to="/product?type=desk">
@@ -184,10 +185,12 @@ const Header = () => {
                                 </ul>
                             </li>
                             <li>
-                                <Link to="/about">Về chúng tôi</Link>
+                                <CustomLink to="/about">
+                                    Về chúng tôi
+                                </CustomLink>
                             </li>
                             <li>
-                                <Link to="/contact">Liên hệ</Link>
+                                <CustomLink to="/contact">Liên hệ</CustomLink>
                             </li>
                         </ul>
                     </div>
